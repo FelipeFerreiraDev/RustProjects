@@ -35,6 +35,24 @@ fn main() {
 }
 */
 
+use std::io; // Importa a biblioteca padrão de entrada e saída
+
+fn convert_to_int(data_input: & String) -> i32 {
+    let x = data_input.trim().parse::<i32>().unwrap(); // trim remove os espaços em branco, parse converte para inteiro e unwrap retorna o valor de dentro do container
+    x
+}
 fn main() {
-      
+    let mut number1 = String::new(); // Cria uma variável mutável do tipo String
+    io::stdin().read_line(&mut number1).expect("Erro ao ler o número"); // Lê a entrada do usuário e armazena na variável number1
+    
+    let mut number2 = String::new();
+    io::stdin().read_line(&mut number2).expect("Erro ao ler o número");  
+
+    if convert_to_int(&number1) > convert_to_int(&number2) {
+        println!("{} é maior que {}", number1, number2);
+    } else if convert_to_int(&number1) < convert_to_int(&number2) {
+        println!("{} é maior que {}", number2, number1);
+    } else {
+        println!("{} é igual a {}", number1, number2);
+    }
 }
