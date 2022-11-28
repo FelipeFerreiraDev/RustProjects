@@ -20,6 +20,21 @@ fn main() {
         ex: let is_active: bool = true;
 
 */
+/* Exemplo de if e else
 fn main() {
-    println!("Hello World!");
+    let number1 = 10;
+    let number2 = 20;
+
+    if number1>number2 {
+        println!("{} é maior que {}", number1, number2);
+    } else if number1<number2 {
+        println!("{} é maior que {}", number2, number1);
+    } else {
+        println!("{} é igual a {}", number1, number2);
+    }
+}
+*/
+
+fn main() {
+      
 }
