@@ -34,7 +34,7 @@ fn main() {
     }
 }
 */
-
+/* Exemplo de conversão de dados
 use std::io; // Importa a biblioteca padrão de entrada e saída
 
 fn convert_to_int(data_input: & String) -> i32 {
@@ -55,4 +55,27 @@ fn main() {
     } else {
         println!("{} é igual a {}", number1, number2);
     }
+}
+*/
+/* Exemplo de loop
+*/
+use std::io; // Importa a biblioteca padrão de entrada e saída
+
+fn convert_to_int(data_input: & String) -> i32 {
+    let x = data_input.trim().parse::<i32>().unwrap(); // trim remove os espaços em branco, parse converte para inteiro e unwrap retorna o valor de dentro do container
+    x
+}
+fn main() {
+    let mut soma = 0;
+    let mut valor_entrada = String::new();
+    io::stdin().read_line(&mut valor_entrada).expect("Erro ao ler o número"); // Lê a entrada do usuário e armazena na variável number1
+    let mut valor_int = convert_to_int(&valor_entrada);
+
+    while valor_int != 0 {
+        let mut r = valor_int % 10;
+        soma = soma + r;
+        valor_int = valor_int / 10;
+
+    }
+    println!("O valor da soma dos digitos {}",soma);
 }
